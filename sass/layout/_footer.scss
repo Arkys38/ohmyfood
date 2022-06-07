@@ -1,0 +1,39 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px;
+    color: white;
+    background-color: darken($colour-quaternary, 35);
+
+    &__title {
+        margin-block: 0px;
+        line-height: auto;
+    }
+    &__list {
+        font-size: 17px;
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 0px;
+        li {
+            line-height: 25px;
+            list-style: none;
+            font-family: 'Roboto-Regular';
+            a {
+                color: white;
+                }
+                .fa-solid {
+                    width: 25px;
+                }
+                .fa-utensils {
+                    font-size: 15px;
+                }
+                .fa-handshake-angle {
+                    font-size: 13px;
+                    transform: scaleX(0.75);
+                }
+        }
+    }
+    
+}
+

@@ -18,6 +18,11 @@
     src: url("../fonts/Roboto/Roboto-Bold.ttf") format('truetype');
 }
 
+@font-face {
+    font-family: 'Roboto-Black';
+    src: url("../fonts/Roboto/Roboto-Black.ttf") format('truetype');
+}
+
 body {
     font-family: 'Roboto-Regular';
 }
@@ -26,3 +31,12 @@ h1 {
     font-family: 'Shrikhand';
 }
 
+h2 {
+    font-family: 'Roboto-Black';
+    font-size: 26px;
+}
+
+h3 {
+    font-family: 'Shrikhand';
+    font-weight: lighter;
+}
