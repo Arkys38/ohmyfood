@@ -40,18 +40,19 @@
             }
         }
         &__btn {
-            display: block;
-            margin-top: -10px;
-            margin-left: auto;
-            margin-right: auto;
-            width: 210px;
+            border: none;
+            margin: 30px auto 75px auto;
+            padding: 15px 25px 15px 25px;
             font-family: 'Roboto-Medium';
             font-size: $font-size-btn;
             color: white;
-            background-image: linear-gradient(170deg, $colour-secondary -60%, $colour-primary);
-            padding: 15px;
+            background-image: $btn-gradient;
             border-radius: 50px;
             box-shadow: $btn-shadow;
+            transition: all 0.3s ease-out;
+            &:hover {
+                @include btn-hover;
+            }
         }
 }
 .how-to {
@@ -177,21 +178,8 @@
             font-size: $font-size-btn;
         }
         &__logo {
-            font-size: 23px;
-            transform: scaleY(1.25);
-            margin: auto 40px auto 0px;
-            .fa-solid {
-                display: none;
-                color: $colour-primary;
-            }
-            &:hover {
-                .fa-solid {
-                    display: block;
-                }
-                .fa-regular {
-                    display: none;
-                }
-            }
+            @include favorite;
+            margin-right: 40px;
         }
         
     }

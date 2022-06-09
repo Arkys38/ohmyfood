@@ -38,6 +38,7 @@ h3 {
 
 body {
   text-align: center;
+  min-width: 380px;
 }
 body a {
   text-decoration: none;
@@ -97,7 +98,7 @@ header {
   justify-content: center;
   line-height: 50px;
   font-family: "Roboto-Bold";
-  font-size: 18px;
+  font-size: 16px;
   background: linear-gradient(to bottom, #bababa, #e3e3e3 10%);
 }
 .explore__title i {
@@ -127,18 +128,21 @@ header {
   color: #878787;
 }
 .explore__btn {
-  display: block;
-  margin-top: -10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 210px;
+  border: none;
+  margin: 30px auto 75px auto;
+  padding: 15px 25px 15px 25px;
   font-family: "Roboto-Medium";
-  font-size: 18px;
+  font-size: 16px;
   color: white;
-  background-image: linear-gradient(170deg, #FF79DA -60%, #9356DC);
-  padding: 15px;
+  background-image: linear-gradient(170deg, #FF79DA -10%, #9356DC);
   border-radius: 50px;
   box-shadow: 0px 7px 15px #cecece;
+  transition: all 0.3s ease-out;
+}
+.explore__btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  box-shadow: 0px 7px 15px #4f4f4f;
 }
 
 .how-to {
@@ -182,7 +186,7 @@ header {
   left: 31px;
   color: white;
   font-family: "Roboto-Bold";
-  font-size: 18px;
+  font-size: 16px;
 }
 .how-to__steps-1 a:hover + .steps-logo, .how-to__steps-2 a:hover + .steps-logo, .how-to__steps-3 a:hover + .steps-logo {
   color: #9356DC;
@@ -194,7 +198,7 @@ header {
   padding-right: 0px;
   text-align: left;
   font-family: "Roboto-Black";
-  font-size: 18px;
+  font-size: 16px;
   background-color: #ededed;
   border-radius: 20px;
   box-shadow: 0px 7px 15px #cecece;
@@ -259,22 +263,191 @@ header {
   padding-bottom: 3px;
 }
 .resto__card__location {
-  font-size: 18px;
+  font-size: 16px;
 }
 .resto__card__logo {
-  font-size: 23px;
-  transform: scaleY(1.25);
-  margin: auto 40px auto 0px;
+  font-size: 22px;
+  transform: scaleY(1.2);
+  margin: auto 0px auto 0px;
+  position: relative;
+  margin-right: 40px;
+}
+.resto__card__logo .fa-regular {
+  top: 1.5px;
+  position: absolute;
+  color: black;
+  transition: color 0.5s ease-in-out;
 }
 .resto__card__logo .fa-solid {
-  display: none;
+  color: white;
+  transition: color 0.5s ease-in-out;
+}
+.resto__card__logo:hover * {
   color: #9356DC;
 }
-.resto__card__logo:hover .fa-solid {
-  display: block;
+
+.palette {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
 }
-.resto__card__logo:hover .fa-regular {
-  display: none;
+.palette__img {
+  object-fit: cover;
+  width: 100%;
+  height: 280px;
+}
+.palette__details {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -50px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 40px 40px 0px 0px;
+  background-color: #ededed;
+  text-align: left;
+}
+.palette__title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  font-size: 25px;
+  padding: 10px;
+}
+.palette__title-logo {
+  font-size: 22px;
+  transform: scaleY(1.2);
+  margin: auto 0px auto 0px;
+  position: relative;
+  margin-right: 15px;
+}
+.palette__title-logo .fa-regular {
+  top: 1.5px;
+  position: absolute;
+  color: black;
+  transition: color 0.5s ease-in-out;
+}
+.palette__title-logo .fa-solid {
+  color: white;
+  transition: color 0.5s ease-in-out;
+}
+.palette__title-logo:hover * {
+  color: #9356DC;
+}
+.palette .menu {
+  display: flex;
+  flex-direction: column;
+}
+.palette .menu__starter {
+  display: flex;
+  flex-direction: column;
+}
+.palette .menu__starter-title {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+}
+.palette .menu__starter-title .invisible {
+  width: 40px;
+  flex-basis: 5px;
+  border-bottom: solid 3px #99E2D0;
+}
+.palette .menu .dish-btn {
+  display: flex;
+  align-items: center;
+  width: 350px;
+  height: 80px;
+  margin: 0px auto 5px auto;
+  border-radius: 15px;
+  position: relative;
+}
+.palette .menu .dish-btn__details {
+  width: 100%;
+  padding: 13px 10px 13px 10px;
+  border-radius: 15px;
+  background-color: white;
+  position: relative;
+  transition: all 0.5s ease-out;
+}
+.palette .menu .dish-btn__details-name {
+  font-family: "Roboto-Bold";
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+.palette .menu .dish-btn__details-desc {
+  display: flex;
+  width: 100%;
+  font-size: 15px;
+}
+.palette .menu .dish-btn__details-desc__adds {
+  width: 85%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: all 0.5s ease-out;
+}
+.palette .menu .dish-btn__details-desc__price {
+  width: 15%;
+  text-align: center;
+  font-weight: bolder;
+  transition: all 0.5s ease-out;
+}
+.palette .menu .dish-btn__animation {
+  width: 0px;
+  height: 72px;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  position: absolute;
+  right: 0;
+  border-radius: 0px 15px 15px 0px;
+  background-color: #99E2D0;
+  transition: all 0.5s ease-out;
+}
+.palette .menu .dish-btn__animation i {
+  position: absolute;
+  top: 25px;
+  right: -10px;
+  transform: rotate(0deg);
+  transition: all 0.5s ease-out;
+}
+.palette .menu .dish-btn__mask {
+  width: 350px;
+  height: 70px;
+  left: -10px;
+  border-radius: 25px;
+  position: absolute;
+  border: solid 10px #ededed;
+}
+.palette .menu .dish-btn__shadow {
+  width: 350px;
+  height: 70px;
+  z-index: 5;
+  border-radius: 15px;
+  position: absolute;
+  box-shadow: 0px 7px 15px #cecece;
+}
+.palette .menu .dish-btn:hover {
+  cursor: pointer;
+}
+.palette .menu .dish-btn:hover .dish-btn__details {
+  width: 290px;
+}
+.palette .menu .dish-btn:hover .dish-btn__details-desc__adds {
+  width: 75%;
+}
+.palette .menu .dish-btn:hover .dish-btn__details-desc__price {
+  width: 20%;
+}
+.palette .menu .dish-btn:hover .dish-btn__animation {
+  width: 60px;
+}
+.palette .menu .dish-btn:hover i {
+  transform: rotate(360deg);
+  right: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

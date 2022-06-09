@@ -1,0 +1,154 @@
+.palette {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        height: 280px;
+    }
+    &__details {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: -50px;
+        padding: 0px 10px 0px 10px;
+        border-radius: 40px 40px 0px 0px;
+        background-color: $colour-box;
+        text-align: left;
+    }
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 100px;
+        align-items: center;
+        font-size: 25px;
+        padding: 10px;
+        &-logo {
+            @include favorite;
+            margin-right: 15px;
+        }
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+
+        &__starter {
+            display: flex;
+            flex-direction: column;
+        }
+        &__starter {
+            &-title {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 10px;
+                .invisible {
+                    width: 40px;
+                    flex-basis: 5px;
+                    border-bottom:  solid 3px $colour-tertiary;
+                }
+            }
+        }
+        .dish-btn {
+            display: flex;
+            align-items: center;
+            width: 350px;
+            height: 80px;
+            margin: 0px auto 5px auto;
+            border-radius: 15px;
+
+
+            position: relative;
+            &__details {
+                width: 100%;
+                padding: 13px 10px 13px 10px;
+                border-radius: 15px;
+                background-color: white;
+                position: relative;
+                @include btn-animation;
+                &-name {
+                    font-family: 'Roboto-Bold';
+                    font-size: 18px;
+                    padding-bottom: 5px;
+                }
+                &-desc {
+                    display: flex;
+                    width: 100%;
+                    font-size: 15px;
+                    &__adds {
+                        width: 85%;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        @include btn-animation;
+                    }
+                    &__price {
+                        width: 15%;
+                        text-align: center;
+                        font-weight: bolder;
+                        @include btn-animation;
+                    }
+                }
+            }
+            &__animation {
+                width: 0px;
+                height: 72px;
+                color: white;
+                font-size: 20px;
+            
+                font-weight: bolder;
+                position: absolute;
+                right: 0;
+                border-radius: 0px 15px 15px 0px;
+                background-color: $colour-tertiary;
+                @include btn-animation;
+                i {
+
+                    position: absolute;
+                    top: 25px;
+                    right: -10px;
+                    transform: rotate(0deg);
+                    @include btn-animation;
+                }
+            }
+            &__mask {
+                width: 350px;
+                height: 70px;
+                left: -10px;
+                border-radius: 25px;
+                position: absolute;
+                border: solid 10px $colour-box;
+            }
+            &__shadow {
+                width: 350px;
+                height: 70px;
+                z-index: 5;
+                border-radius: 15px;
+                position: absolute;
+                box-shadow: $btn-shadow;
+            }
+            &:hover {
+                cursor: pointer;
+                .dish-btn__details {
+                    width: 290px;
+                    &-desc__adds {
+                        width: 75%;
+                    }
+                    &-desc__price {
+                        width: 20%;
+                    }
+                }
+                .dish-btn__animation {
+                    width: 60px;
+                }
+                i {
+                    transform: rotate(360deg);
+                    right: 20px;
+                }
+            }
+        }
+    }
+}
