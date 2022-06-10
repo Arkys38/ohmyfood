@@ -63,15 +63,19 @@
             border-radius: 15px;
         /* position initials à l'arrivée sur la page */
             &--1 {
-                animation: start-page 1s;
+                animation: start-page 2s;
                 @include keyframe-start-page;
             }
             &--2 {
-                animation: start-page 1.5s;
+                animation: start-page 2.5s;
                 @include keyframe-start-page;                
             }
             &--3 {
-                animation: start-page 2s;
+                animation: start-page 3s;
+                @include keyframe-start-page;
+            }
+            &--4 {
+                animation: start-page 3.5s;
                 @include keyframe-start-page;
             }
             

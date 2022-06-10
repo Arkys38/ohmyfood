@@ -383,7 +383,7 @@ header a {
   transition: all 0.5s ease-out;
 }
 .restaurant .menu .dish-btn--1 {
-  animation: start-page 1s;
+  animation: start-page 2s;
 }
 @keyframes start-page {
   0% {
@@ -396,7 +396,7 @@ header a {
   }
 }
 .restaurant .menu .dish-btn--2 {
-  animation: start-page 1.5s;
+  animation: start-page 2.5s;
 }
 @keyframes start-page {
   0% {
@@ -409,7 +409,20 @@ header a {
   }
 }
 .restaurant .menu .dish-btn--3 {
-  animation: start-page 2s;
+  animation: start-page 3s;
+}
+@keyframes start-page {
+  0% {
+    opacity: 0;
+    top: 15px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+.restaurant .menu .dish-btn--4 {
+  animation: start-page 3.5s;
 }
 @keyframes start-page {
   0% {
