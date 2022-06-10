@@ -1,8 +1,9 @@
-.palette {
+.restaurant {
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
+    background-color: $colour-box;
     &__img {
         object-fit: cover;
         width: 100%;
@@ -26,6 +27,7 @@
         align-items: center;
         font-size: 25px;
         padding: 10px;
+        margin-bottom: -30px;
         &-logo {
             @include favorite;
             margin-right: 15px;
@@ -35,16 +37,16 @@
         display: flex;
         flex-direction: column;
 
-        &__starter {
+        &__category {
             display: flex;
             flex-direction: column;
         }
-        &__starter {
+        &__category {
             &-title {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                padding: 10px;
+                padding: 20px 10px 10px 10px;
                 .invisible {
                     width: 40px;
                     flex-basis: 5px;
@@ -59,9 +61,24 @@
             height: 80px;
             margin: 0px auto 5px auto;
             border-radius: 15px;
+        /* position initials à l'arrivée sur la page */
+            &--1 {
+                animation: start-page 1s;
+                @include keyframe-start-page;
+            }
+            &--2 {
+                animation: start-page 1.5s;
+                @include keyframe-start-page;                
+            }
+            &--3 {
+                animation: start-page 2s;
+                @include keyframe-start-page;
+            }
+            
 
-
+        
             position: relative;
+            @include start-animation;
             &__details {
                 width: 100%;
                 padding: 13px 10px 13px 10px;
@@ -106,7 +123,6 @@
                 background-color: $colour-tertiary;
                 @include btn-animation;
                 i {
-
                     position: absolute;
                     top: 25px;
                     right: -10px;
@@ -121,6 +137,7 @@
                 border-radius: 25px;
                 position: absolute;
                 border: solid 10px $colour-box;
+                animation: border-start 2s;
             }
             &__shadow {
                 width: 350px;
@@ -150,5 +167,20 @@
                 }
             }
         }
+    }
+    .order-btn {
+        border: none;
+            margin: 30px auto 0px auto;
+            padding: 15px 50px 15px 50px;
+            font-family: 'Roboto-Medium';
+            font-size: $font-size-btn;
+            color: white;
+            background-image: $btn-gradient;
+            border-radius: 50px;
+            box-shadow: $btn-shadow;
+            transition: all 0.3s ease-out;
+            &:hover {
+                @include btn-hover;
+            }
     }
 }

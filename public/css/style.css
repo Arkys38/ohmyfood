@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Shrikhand";
   src: url("../fonts/Shrikhand/Shrikhand.ttf") format("truetype");
@@ -46,7 +47,20 @@ body a {
 }
 
 header {
+  display: flex;
+  justify-content: space-around;
   line-height: 20px;
+  position: relative;
+  margin-bottom: -5px;
+}
+header a {
+  position: absolute;
+  top: 18px;
+  left: 25px;
+  font-size: 25px;
+  font-weight: bolder;
+  transform: scaleX(0.8);
+  text-shadow: 0px 0px 1px black;
 }
 
 .footer {
@@ -286,18 +300,19 @@ header {
   color: #9356DC;
 }
 
-.palette {
+.restaurant {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
+  background-color: #ededed;
 }
-.palette__img {
+.restaurant__img {
   object-fit: cover;
   width: 100%;
   height: 280px;
 }
-.palette__details {
+.restaurant__details {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -307,7 +322,7 @@ header {
   background-color: #ededed;
   text-align: left;
 }
-.palette__title {
+.restaurant__title {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -315,56 +330,98 @@ header {
   align-items: center;
   font-size: 25px;
   padding: 10px;
+  margin-bottom: -30px;
 }
-.palette__title-logo {
+.restaurant__title-logo {
   font-size: 22px;
   transform: scaleY(1.2);
   margin: auto 0px auto 0px;
   position: relative;
   margin-right: 15px;
 }
-.palette__title-logo .fa-regular {
+.restaurant__title-logo .fa-regular {
   top: 1.5px;
   position: absolute;
   color: black;
   transition: color 0.5s ease-in-out;
 }
-.palette__title-logo .fa-solid {
+.restaurant__title-logo .fa-solid {
   color: white;
   transition: color 0.5s ease-in-out;
 }
-.palette__title-logo:hover * {
+.restaurant__title-logo:hover * {
   color: #9356DC;
 }
-.palette .menu {
+.restaurant .menu {
   display: flex;
   flex-direction: column;
 }
-.palette .menu__starter {
+.restaurant .menu__category {
   display: flex;
   flex-direction: column;
 }
-.palette .menu__starter-title {
+.restaurant .menu__category-title {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 10px;
+  padding: 20px 10px 10px 10px;
 }
-.palette .menu__starter-title .invisible {
+.restaurant .menu__category-title .invisible {
   width: 40px;
   flex-basis: 5px;
   border-bottom: solid 3px #99E2D0;
 }
-.palette .menu .dish-btn {
+.restaurant .menu .dish-btn {
   display: flex;
   align-items: center;
   width: 350px;
   height: 80px;
   margin: 0px auto 5px auto;
   border-radius: 15px;
+  /* position initials à l'arrivée sur la page */
   position: relative;
+  transition: all 0.5s ease-out;
 }
-.palette .menu .dish-btn__details {
+.restaurant .menu .dish-btn--1 {
+  animation: start-page 1s;
+}
+@keyframes start-page {
+  0% {
+    opacity: 0;
+    top: 15px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+.restaurant .menu .dish-btn--2 {
+  animation: start-page 1.5s;
+}
+@keyframes start-page {
+  0% {
+    opacity: 0;
+    top: 15px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+.restaurant .menu .dish-btn--3 {
+  animation: start-page 2s;
+}
+@keyframes start-page {
+  0% {
+    opacity: 0;
+    top: 15px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+.restaurant .menu .dish-btn__details {
   width: 100%;
   padding: 13px 10px 13px 10px;
   border-radius: 15px;
@@ -372,30 +429,30 @@ header {
   position: relative;
   transition: all 0.5s ease-out;
 }
-.palette .menu .dish-btn__details-name {
+.restaurant .menu .dish-btn__details-name {
   font-family: "Roboto-Bold";
   font-size: 18px;
   padding-bottom: 5px;
 }
-.palette .menu .dish-btn__details-desc {
+.restaurant .menu .dish-btn__details-desc {
   display: flex;
   width: 100%;
   font-size: 15px;
 }
-.palette .menu .dish-btn__details-desc__adds {
+.restaurant .menu .dish-btn__details-desc__adds {
   width: 85%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   transition: all 0.5s ease-out;
 }
-.palette .menu .dish-btn__details-desc__price {
+.restaurant .menu .dish-btn__details-desc__price {
   width: 15%;
   text-align: center;
   font-weight: bolder;
   transition: all 0.5s ease-out;
 }
-.palette .menu .dish-btn__animation {
+.restaurant .menu .dish-btn__animation {
   width: 0px;
   height: 72px;
   color: white;
@@ -407,22 +464,23 @@ header {
   background-color: #99E2D0;
   transition: all 0.5s ease-out;
 }
-.palette .menu .dish-btn__animation i {
+.restaurant .menu .dish-btn__animation i {
   position: absolute;
   top: 25px;
   right: -10px;
   transform: rotate(0deg);
   transition: all 0.5s ease-out;
 }
-.palette .menu .dish-btn__mask {
+.restaurant .menu .dish-btn__mask {
   width: 350px;
   height: 70px;
   left: -10px;
   border-radius: 25px;
   position: absolute;
   border: solid 10px #ededed;
+  animation: border-start 2s;
 }
-.palette .menu .dish-btn__shadow {
+.restaurant .menu .dish-btn__shadow {
   width: 350px;
   height: 70px;
   z-index: 5;
@@ -430,24 +488,41 @@ header {
   position: absolute;
   box-shadow: 0px 7px 15px #cecece;
 }
-.palette .menu .dish-btn:hover {
+.restaurant .menu .dish-btn:hover {
   cursor: pointer;
 }
-.palette .menu .dish-btn:hover .dish-btn__details {
+.restaurant .menu .dish-btn:hover .dish-btn__details {
   width: 290px;
 }
-.palette .menu .dish-btn:hover .dish-btn__details-desc__adds {
+.restaurant .menu .dish-btn:hover .dish-btn__details-desc__adds {
   width: 75%;
 }
-.palette .menu .dish-btn:hover .dish-btn__details-desc__price {
+.restaurant .menu .dish-btn:hover .dish-btn__details-desc__price {
   width: 20%;
 }
-.palette .menu .dish-btn:hover .dish-btn__animation {
+.restaurant .menu .dish-btn:hover .dish-btn__animation {
   width: 60px;
 }
-.palette .menu .dish-btn:hover i {
+.restaurant .menu .dish-btn:hover i {
   transform: rotate(360deg);
   right: 20px;
+}
+.restaurant .order-btn {
+  border: none;
+  margin: 30px auto 0px auto;
+  padding: 15px 50px 15px 50px;
+  font-family: "Roboto-Medium";
+  font-size: 16px;
+  color: white;
+  background-image: linear-gradient(170deg, #FF79DA -10%, #9356DC);
+  border-radius: 50px;
+  box-shadow: 0px 7px 15px #cecece;
+  transition: all 0.3s ease-out;
+}
+.restaurant .order-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  box-shadow: 0px 7px 15px #4f4f4f;
 }
 
 /*# sourceMappingURL=style.css.map */
