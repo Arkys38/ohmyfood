@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Shrikhand";
   src: url("../fonts/Shrikhand/Shrikhand.ttf") format("truetype");
@@ -98,6 +97,212 @@ header a {
 .footer__list li .fa-handshake-angle {
   font-size: 13px;
   transform: scaleX(0.75);
+}
+
+header, section, footer {
+  opacity: 0;
+  animation: 0.1s start-page-3s 3s linear forwards;
+  opacity: 0;
+}
+@keyframes start-page-3s {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 5;
+  position: absolute;
+  animation: 2.9s loader-3s forwards;
+  opacity: 0;
+}
+@keyframes loader-3s {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-spinner__row {
+  display: flex;
+  position: relative;
+}
+.loading-spinner__row * {
+  position: relative;
+}
+.loading-spinner__row--1 {
+  top: -20px;
+  width: 45%;
+}
+.loading-spinner__row--2 {
+  width: 45%;
+  top: -40px;
+}
+.loading-spinner__row--3 {
+  width: 22.5%;
+  top: -95px;
+  left: -32px;
+  transform: scale(1.15);
+}
+.loading-spinner--1 {
+  animation: 1.5s start-page-home 2 linear;
+  opacity: 0;
+}
+@keyframes start-page-home {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-spinner--2 {
+  transform: scale(1.2);
+  animation: 1.5s start-page-home 2 0.125s linear;
+  opacity: 0;
+}
+@keyframes start-page-home {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-spinner--3 {
+  transform: scale(1.3);
+  left: 33px;
+  animation: 1.5s start-page-home 2 0.25s linear;
+  opacity: 0;
+}
+@keyframes start-page-home {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-spinner--4 {
+  transform: scale(0.85);
+  left: 40px;
+  animation: 1.5s start-page-home 2 0.375s linear;
+  opacity: 0;
+}
+@keyframes start-page-home {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-spinner--5 {
+  left: 35px;
+  animation: 1.5s start-page-home 2 0.5s linear;
+  opacity: 0;
+}
+@keyframes start-page-home {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-spinner--6 {
+  animation: 1.5s start-page-home 2 0.625s linear;
+  opacity: 0;
+}
+@keyframes start-page-home {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-spinner--7 {
+  animation: 1.5s start-page-home 2 0.75s linear;
+  opacity: 0;
+}
+@keyframes start-page-home {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-spinner--8 {
+  animation: 1.5s start-page-home 2 0.875s linear;
+  opacity: 0;
+}
+@keyframes start-page-home {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .explore {
@@ -364,7 +569,7 @@ header a {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 20px 10px 10px 10px;
+  padding: 20px 10px 15px 10px;
 }
 .restaurant .menu__category-title .invisible {
   width: 40px;
@@ -374,18 +579,18 @@ header a {
 .restaurant .menu .dish-btn {
   display: flex;
   align-items: center;
-  width: 350px;
-  height: 80px;
-  margin: 0px auto 5px auto;
+  width: 100%;
+  margin: 0px auto 15px auto;
   border-radius: 15px;
-  /* position initials à l'arrivée sur la page */
+  overflow: hidden;
+  box-shadow: 0px 7px 15px #cecece;
   position: relative;
-  transition: all 0.5s ease-out;
+  opacity: 0;
 }
 .restaurant .menu .dish-btn--1 {
-  animation: start-page 2s;
+  animation: 1s start-page 0.25s;
 }
-@keyframes start-page {
+@keyframes start-page-menu {
   0% {
     opacity: 0;
     top: 15px;
@@ -396,9 +601,9 @@ header a {
   }
 }
 .restaurant .menu .dish-btn--2 {
-  animation: start-page 2.5s;
+  animation: 1s start-page 0.5s forwards;
 }
-@keyframes start-page {
+@keyframes start-page-menu {
   0% {
     opacity: 0;
     top: 15px;
@@ -409,9 +614,9 @@ header a {
   }
 }
 .restaurant .menu .dish-btn--3 {
-  animation: start-page 3s;
+  animation: 1s start-page 0.75s forwards;
 }
-@keyframes start-page {
+@keyframes start-page-menu {
   0% {
     opacity: 0;
     top: 15px;
@@ -422,9 +627,9 @@ header a {
   }
 }
 .restaurant .menu .dish-btn--4 {
-  animation: start-page 3.5s;
+  animation: 1s start-page 1s forwards;
 }
-@keyframes start-page {
+@keyframes start-page-menu {
   0% {
     opacity: 0;
     top: 15px;
@@ -437,7 +642,6 @@ header a {
 .restaurant .menu .dish-btn__details {
   width: 100%;
   padding: 13px 10px 13px 10px;
-  border-radius: 15px;
   background-color: white;
   position: relative;
   transition: all 0.5s ease-out;
@@ -446,6 +650,9 @@ header a {
   font-family: "Roboto-Bold";
   font-size: 18px;
   padding-bottom: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .restaurant .menu .dish-btn__details-desc {
   display: flex;
@@ -467,7 +674,7 @@ header a {
 }
 .restaurant .menu .dish-btn__animation {
   width: 0px;
-  height: 72px;
+  height: 80px;
   color: white;
   font-size: 20px;
   font-weight: bolder;
@@ -479,33 +686,16 @@ header a {
 }
 .restaurant .menu .dish-btn__animation i {
   position: absolute;
-  top: 25px;
-  right: -10px;
+  top: 30px;
+  right: -20px;
   transform: rotate(0deg);
   transition: all 0.5s ease-out;
-}
-.restaurant .menu .dish-btn__mask {
-  width: 350px;
-  height: 70px;
-  left: -10px;
-  border-radius: 25px;
-  position: absolute;
-  border: solid 10px #ededed;
-  animation: border-start 2s;
-}
-.restaurant .menu .dish-btn__shadow {
-  width: 350px;
-  height: 70px;
-  z-index: 5;
-  border-radius: 15px;
-  position: absolute;
-  box-shadow: 0px 7px 15px #cecece;
 }
 .restaurant .menu .dish-btn:hover {
   cursor: pointer;
 }
 .restaurant .menu .dish-btn:hover .dish-btn__details {
-  width: 290px;
+  width: 80%;
 }
 .restaurant .menu .dish-btn:hover .dish-btn__details-desc__adds {
   width: 75%;
@@ -514,11 +704,11 @@ header a {
   width: 20%;
 }
 .restaurant .menu .dish-btn:hover .dish-btn__animation {
-  width: 60px;
+  width: 20%;
 }
 .restaurant .menu .dish-btn:hover i {
   transform: rotate(360deg);
-  right: 20px;
+  right: 40%;
 }
 .restaurant .order-btn {
   border: none;
@@ -536,6 +726,41 @@ header a {
   cursor: pointer;
   opacity: 0.8;
   box-shadow: 0px 7px 15px #4f4f4f;
+}
+
+body {
+  width: 100%;
+}
+
+.test-box {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  height: 100px;
+  border: solid 2px red;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.test-box__bar {
+  display: block;
+  z-index: -1;
+  width: 50%;
+  background-color: aqua;
+}
+.test-box__bar img {
+  object-fit: cover;
+}
+
+.heart-out {
+  font-size: 50px;
+  overflow: hidden;
+  border: solid 2px blue;
+  position: relative;
+}
+.heart-out .heart-in {
+  position: absolute;
+  right: 0px;
+  background-color: pink;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,76 @@
+header, section, footer {
+    opacity: 0;
+    animation: 0.1s start-page-3s 3s linear forwards;
+    @include kf-start-page-3s;
+}
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 5;
+    position:absolute;
+    animation: 2.9s loader-3s forwards;
+    @include kf-loader-3s;
+    &__row {
+        display: flex;
+        position: relative;
+        * {
+
+            position: relative;
+        }
+        &--1 {
+            top: -20px;
+            width: 45%;
+        }
+        &--2 {
+            width: 45%;
+            top: -40px;
+        }
+        &--3 {
+            width: 22.5%;
+            top: -95px;
+            left: -32px;
+            transform: scale(1.15);
+        }
+
+    }
+    &--1 {
+        animation: $loader-duration start-page-home $loader-iteration linear;
+        @include kf-start-page-home;
+    }
+    &--2 {
+        transform: scale(1.2);
+        animation: $loader-duration start-page-home $loader-iteration 0.125s linear;
+        @include kf-start-page-home;     
+    }
+    &--3 {
+        transform: scale(1.3);
+        left: 33px;
+        animation: $loader-duration start-page-home $loader-iteration 0.25s linear;
+        @include kf-start-page-home;
+    }
+    &--4 {
+        transform: scale(0.85);
+        left: 40px;  
+        animation: $loader-duration start-page-home $loader-iteration 0.375s linear;
+        @include kf-start-page-home;  
+    }
+    &--5 {
+        left: 35px;
+        animation: $loader-duration start-page-home $loader-iteration 0.5s linear;
+        @include kf-start-page-home;      
+    }
+    &--6 {
+        animation: $loader-duration start-page-home $loader-iteration 0.625s linear;
+        @include kf-start-page-home;
+    }
+    &--7 {
+        animation: $loader-duration start-page-home $loader-iteration 0.75s linear;
+        @include kf-start-page-home;
+    }
+    &--8 {
+        animation: $loader-duration start-page-home $loader-iteration 0.875s linear;
+        @include kf-start-page-home;
+    }
+}

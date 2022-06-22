@@ -46,7 +46,7 @@
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                padding: 20px 10px 10px 10px;
+                padding: 20px 10px 15px 10px;
                 .invisible {
                     width: 40px;
                     flex-basis: 5px;
@@ -57,36 +57,33 @@
         .dish-btn {
             display: flex;
             align-items: center;
-            width: 350px;
-            height: 80px;
-            margin: 0px auto 5px auto;
+            width: 100%;
+            margin: 0px auto 15px auto;
             border-radius: 15px;
-        /* position initials à l'arrivée sur la page */
+            overflow: hidden;
+            box-shadow: $btn-shadow;
+            position: relative;
+            opacity: 0;
             &--1 {
-                animation: start-page 2s;
-                @include keyframe-start-page;
+                animation: 1s start-page 0.25s ;
+                @include kf-start-page-menu;
             }
             &--2 {
-                animation: start-page 2.5s;
-                @include keyframe-start-page;                
+                animation: 1s start-page 0.5s forwards;
+                @include kf-start-page-menu;                
             }
             &--3 {
-                animation: start-page 3s;
-                @include keyframe-start-page;
+                animation: 1s start-page 0.75s forwards;
+                @include kf-start-page-menu;
             }
             &--4 {
-                animation: start-page 3.5s;
-                @include keyframe-start-page;
-            }
+                animation: 1s start-page 1s forwards;
+                @include kf-start-page-menu;
+            }      
             
-
-        
-            position: relative;
-            @include start-animation;
             &__details {
                 width: 100%;
                 padding: 13px 10px 13px 10px;
-                border-radius: 15px;
                 background-color: white;
                 position: relative;
                 @include btn-animation;
@@ -94,6 +91,9 @@
                     font-family: 'Roboto-Bold';
                     font-size: 18px;
                     padding-bottom: 5px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                 }
                 &-desc {
                     display: flex;
@@ -116,10 +116,9 @@
             }
             &__animation {
                 width: 0px;
-                height: 72px;
+                height: 80px;
                 color: white;
-                font-size: 20px;
-            
+                font-size: 20px;            
                 font-weight: bolder;
                 position: absolute;
                 right: 0;
@@ -128,33 +127,17 @@
                 @include btn-animation;
                 i {
                     position: absolute;
-                    top: 25px;
-                    right: -10px;
+                    top: 30px;
+                    right: -20px;
                     transform: rotate(0deg);
                     @include btn-animation;
                 }
             }
-            &__mask {
-                width: 350px;
-                height: 70px;
-                left: -10px;
-                border-radius: 25px;
-                position: absolute;
-                border: solid 10px $colour-box;
-                animation: border-start 2s;
-            }
-            &__shadow {
-                width: 350px;
-                height: 70px;
-                z-index: 5;
-                border-radius: 15px;
-                position: absolute;
-                box-shadow: $btn-shadow;
-            }
+
             &:hover {
                 cursor: pointer;
                 .dish-btn__details {
-                    width: 290px;
+                    width: 80%;
                     &-desc__adds {
                         width: 75%;
                     }
@@ -163,11 +146,11 @@
                     }
                 }
                 .dish-btn__animation {
-                    width: 60px;
+                    width: 20%;
                 }
                 i {
                     transform: rotate(360deg);
-                    right: 20px;
+                    right: 40%;
                 }
             }
         }

@@ -36,12 +36,8 @@
     transition: all 0.5s ease-out;
 }
 
-@mixin start-animation {
-    transition: all 0.5s ease-out;
-}
-
-@mixin keyframe-start-page {
-    @keyframes start-page {
+@mixin kf-start-page-menu {
+    @keyframes start-page-menu {
         0% {
             opacity: 0;
             top: 15px;
@@ -49,6 +45,49 @@
         100% {
             opacity: 1;
             top: 0px;
+        }
+    }
+}
+
+@mixin kf-start-page-home {
+    opacity: 0;
+    @keyframes start-page-home {
+        0% {
+            opacity: 0;
+        }
+        30% {
+            opacity: 1;
+        }
+        80% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+}
+@mixin kf-start-page-3s {
+    opacity: 0;
+    @keyframes start-page-3s {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+@mixin kf-loader-3s {
+    opacity: 0;
+    @keyframes loader-3s {
+        0% {
+            opacity: 1;
+        }
+        99% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
         }
     }
 }
