@@ -1,4 +1,5 @@
-header, section, footer {
+
+.home header, .home section, .home footer {
     opacity: 0;
     animation: 0.1s start-page-3s 3s linear forwards;
     @include kf-start-page-3s;
@@ -6,34 +7,39 @@ header, section, footer {
 
 .loading-spinner {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    z-index: 5;
-    position:absolute;
-    animation: 2.9s loader-3s forwards;
-    @include kf-loader-3s;
+    justify-content: center;
+    &__box {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        position:absolute;
+        animation: 2.9s loader-3s forwards;
+        @include kf-loader-3s;
+    }
     &__row {
         display: flex;
         position: relative;
-        * {
-
-            position: relative;
-        }
         &--1 {
-            top: -20px;
+            position: relative;
+            top: -10px;
+            left: 5px;
             width: 45%;
+            transform: scale(1.05);
         }
         &--2 {
+            position: relative;
             width: 45%;
-            top: -40px;
+            top: -10px;
+            left: 30px;
+            transform: scale(1.05);
         }
         &--3 {
+            position: relative;
             width: 22.5%;
-            top: -95px;
-            left: -32px;
-            transform: scale(1.15);
+            top: -40px;
+            left: -16px;
+            transform: scale(1.2);
         }
-
     }
     &--1 {
         animation: $loader-duration start-page-home $loader-iteration linear;
@@ -57,7 +63,8 @@ header, section, footer {
         @include kf-start-page-home;  
     }
     &--5 {
-        left: 35px;
+        position: relative;
+        left: 20px;
         animation: $loader-duration start-page-home $loader-iteration 0.5s linear;
         @include kf-start-page-home;      
     }

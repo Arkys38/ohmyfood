@@ -99,7 +99,7 @@ header a {
   transform: scaleX(0.75);
 }
 
-header, section, footer {
+.home header, .home section, .home footer {
   opacity: 0;
   animation: 0.1s start-page-3s 3s linear forwards;
   opacity: 0;
@@ -115,9 +115,12 @@ header, section, footer {
 
 .loading-spinner {
   display: flex;
+  justify-content: center;
+}
+.loading-spinner__box {
+  display: flex;
   flex-direction: column;
-  width: 100%;
-  z-index: 5;
+  width: 300px;
   position: absolute;
   animation: 2.9s loader-3s forwards;
   opacity: 0;
@@ -137,22 +140,26 @@ header, section, footer {
   display: flex;
   position: relative;
 }
-.loading-spinner__row * {
-  position: relative;
-}
 .loading-spinner__row--1 {
-  top: -20px;
+  position: relative;
+  top: -10px;
+  left: 5px;
   width: 45%;
+  transform: scale(1.05);
 }
 .loading-spinner__row--2 {
+  position: relative;
   width: 45%;
-  top: -40px;
+  top: -10px;
+  left: 30px;
+  transform: scale(1.05);
 }
 .loading-spinner__row--3 {
+  position: relative;
   width: 22.5%;
-  top: -95px;
-  left: -32px;
-  transform: scale(1.15);
+  top: -40px;
+  left: -16px;
+  transform: scale(1.2);
 }
 .loading-spinner--1 {
   animation: 1.5s start-page-home 2 linear;
@@ -232,7 +239,8 @@ header, section, footer {
   }
 }
 .loading-spinner--5 {
-  left: 35px;
+  position: relative;
+  left: 20px;
   animation: 1.5s start-page-home 2 0.5s linear;
   opacity: 0;
 }
@@ -339,7 +347,7 @@ header, section, footer {
 }
 .explore__contents h2 {
   padding: 0px 30px 0px 30px;
-  margin-bottom: 6%;
+  margin-bottom: 20px;
 }
 .explore__contents div {
   font-size: 18px;
@@ -560,10 +568,12 @@ header, section, footer {
 .restaurant .menu {
   display: flex;
   flex-direction: column;
+  margin: 0px auto 0px auto;
 }
 .restaurant .menu__category {
   display: flex;
   flex-direction: column;
+  width: 360px;
 }
 .restaurant .menu__category-title {
   display: flex;
@@ -588,7 +598,7 @@ header, section, footer {
   opacity: 0;
 }
 .restaurant .menu .dish-btn--1 {
-  animation: 1s start-page 0.25s;
+  animation: 1s start-page-menu 0.25s forwards;
 }
 @keyframes start-page-menu {
   0% {
@@ -601,7 +611,7 @@ header, section, footer {
   }
 }
 .restaurant .menu .dish-btn--2 {
-  animation: 1s start-page 0.5s forwards;
+  animation: 1s start-page-menu 0.5s forwards;
 }
 @keyframes start-page-menu {
   0% {
@@ -614,7 +624,7 @@ header, section, footer {
   }
 }
 .restaurant .menu .dish-btn--3 {
-  animation: 1s start-page 0.75s forwards;
+  animation: 1s start-page-menu 0.75s forwards;
 }
 @keyframes start-page-menu {
   0% {
@@ -627,7 +637,7 @@ header, section, footer {
   }
 }
 .restaurant .menu .dish-btn--4 {
-  animation: 1s start-page 1s forwards;
+  animation: 1s start-page-menu 1s forwards;
 }
 @keyframes start-page-menu {
   0% {
@@ -640,7 +650,7 @@ header, section, footer {
   }
 }
 .restaurant .menu .dish-btn__details {
-  width: 100%;
+  width: 360px;
   padding: 13px 10px 13px 10px;
   background-color: white;
   position: relative;
@@ -660,7 +670,7 @@ header, section, footer {
   font-size: 15px;
 }
 .restaurant .menu .dish-btn__details-desc__adds {
-  width: 85%;
+  width: 290px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -761,6 +771,85 @@ body {
   position: absolute;
   right: 0px;
   background-color: pink;
+}
+
+@media screen and (min-width: 800px) {
+  .explore {
+    height: 280px;
+  }
+
+  .how-to {
+    padding: 0px 0px 50px 0px;
+  }
+  .how-to__steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .how-to__steps-1, .how-to__steps-2, .how-to__steps-3 {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 0px 10px 0px 10px;
+  }
+  .how-to__steps-1 .fa-circle, .how-to__steps-2 .fa-circle, .how-to__steps-3 .fa-circle {
+    position: absolute;
+    top: -10px;
+    left: 110px;
+    z-index: 1;
+  }
+  .how-to__steps-1 .steps-logo, .how-to__steps-2 .steps-logo, .how-to__steps-3 .steps-logo {
+    position: absolute;
+    right: 210px;
+  }
+  .how-to__steps-1 .circle-number, .how-to__steps-2 .circle-number, .how-to__steps-3 .circle-number {
+    position: absolute;
+    top: -35px;
+    left: 118px;
+    color: white;
+    font-family: "Roboto-Bold";
+    font-size: 16px;
+  }
+  .how-to__steps-1 a:hover + .steps-logo, .how-to__steps-2 a:hover + .steps-logo, .how-to__steps-3 a:hover + .steps-logo {
+    color: #9356DC;
+  }
+  .how-to__steps-title {
+    width: 190px;
+    min-width: 180px;
+    padding-left: 50px;
+  }
+  .how-to__title {
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    margin-left: 0px;
+  }
+
+  .resto__title {
+    text-align: center;
+    padding: 0px 0px 20px 0px;
+    margin-left: 0px;
+  }
+  .resto__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .resto__card {
+    margin: 0px 20px 40px 20px;
+  }
+
+  .restaurant .menu {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .restaurant .menu__category {
+    width: 300px;
+    padding: 10px;
+  }
+  .restaurant .menu .dish-btn__details-desc__adds {
+    width: 238px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

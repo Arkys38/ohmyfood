@@ -1,0 +1,91 @@
+@media screen and (min-width: 800px) {
+    .explore {
+        height: 280px;
+    }
+    
+    .how-to {
+        padding: 0px 0px 50px 0px;
+        &__steps {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            &-1, &-2, &-3 {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                margin: 0px 10px 0px 10px;
+                .fa-circle {   
+                    position: absolute;
+                    top: -10px;
+                    left: 110px;
+                    z-index: 1;
+                }
+                .steps-logo {
+                    position: absolute;
+                    right: 210px;
+                }
+                .circle-number {
+                    position: absolute;
+                    top: -35px;
+                    left: 118px;
+                    color: white;
+                    font-family: 'Roboto-Bold';
+                    font-size: $font-size-btn;
+                }
+                a:hover {
+                    + .steps-logo {
+                        color: $colour-primary;
+                    }
+                }
+            }
+            &-title {
+                width: 190px;
+                min-width: 180px;
+                padding-left: 50px;
+            }
+        }
+        &__title {
+            text-align: center;
+            padding: 20px 0px 20px 0px;
+            margin-left: 0px;
+        }
+    }
+    .resto {
+        &__title {
+            text-align: center;
+            padding: 0px 0px 20px 0px;
+            margin-left: 0px;
+        }
+        &__cards {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;    
+        }
+        &__card {
+
+            margin: 0px 20px 40px 20px;
+        }
+    }
+    .restaurant {
+        .menu {
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            &__category {
+                width: 300px;
+                padding: 10px;
+            }
+            .dish-btn {
+                &__details {
+                    &-desc {
+                        &__adds {
+                            width: 238px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+

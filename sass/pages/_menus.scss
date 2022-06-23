@@ -36,12 +36,11 @@
     .menu {
         display: flex;
         flex-direction: column;
-
+        margin: 0px auto 0px auto;
         &__category {
             display: flex;
             flex-direction: column;
-        }
-        &__category {
+            width: 360px;
             &-title {
                 display: flex;
                 flex-direction: column;
@@ -65,24 +64,24 @@
             position: relative;
             opacity: 0;
             &--1 {
-                animation: 1s start-page 0.25s ;
+                animation: 1s start-page-menu 0.25s forwards;
                 @include kf-start-page-menu;
             }
             &--2 {
-                animation: 1s start-page 0.5s forwards;
+                animation: 1s start-page-menu 0.5s forwards;
                 @include kf-start-page-menu;                
             }
             &--3 {
-                animation: 1s start-page 0.75s forwards;
+                animation: 1s start-page-menu 0.75s forwards;
                 @include kf-start-page-menu;
             }
             &--4 {
-                animation: 1s start-page 1s forwards;
+                animation: 1s start-page-menu 1s forwards;
                 @include kf-start-page-menu;
             }      
             
             &__details {
-                width: 100%;
+                width: 360px;
                 padding: 13px 10px 13px 10px;
                 background-color: white;
                 position: relative;
@@ -100,7 +99,7 @@
                     width: 100%;
                     font-size: 15px;
                     &__adds {
-                        width: 85%;
+                        width: 290px;
                         overflow: hidden;
                         white-space: nowrap;
                         text-overflow: ellipsis;
