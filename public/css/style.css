@@ -70,10 +70,6 @@ header a {
   color: white;
   background-color: #2e2e2e;
 }
-.footer__title {
-  margin-block: 0px;
-  line-height: auto;
-}
 .footer__list {
   font-size: 17px;
   display: flex;
@@ -736,41 +732,6 @@ header a {
   cursor: pointer;
   opacity: 0.8;
   box-shadow: 0px 7px 15px #4f4f4f;
-}
-
-body {
-  width: 100%;
-}
-
-.test-box {
-  display: flex;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  border: solid 2px red;
-  border-radius: 30px;
-  overflow: hidden;
-}
-.test-box__bar {
-  display: block;
-  z-index: -1;
-  width: 50%;
-  background-color: aqua;
-}
-.test-box__bar img {
-  object-fit: cover;
-}
-
-.heart-out {
-  font-size: 50px;
-  overflow: hidden;
-  border: solid 2px blue;
-  position: relative;
-}
-.heart-out .heart-in {
-  position: absolute;
-  right: 0px;
-  background-color: pink;
 }
 
 @media screen and (min-width: 800px) {
