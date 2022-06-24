@@ -6,10 +6,6 @@
     color: white;
     background-color: darken($colour-quaternary, 35);
 
-    &__title {
-        margin-block: 0px;
-        line-height: auto;
-    }
     &__list {
         font-size: 17px;
         display: flex;
