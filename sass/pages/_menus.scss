@@ -78,8 +78,7 @@
             &--4 {
                 animation: 1s start-page-menu 1s forwards;
                 @include kf-start-page-menu;
-            }      
-            
+            }            
             &__details {
                 width: 360px;
                 padding: 13px 10px 13px 10px;
@@ -132,7 +131,6 @@
                     @include btn-animation;
                 }
             }
-
             &:hover {
                 cursor: pointer;
                 .dish-btn__details {
